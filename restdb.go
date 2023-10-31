@@ -245,7 +245,7 @@ func IsUserAdmin(u User) bool {
 	}
 	defer db.Close()
 
-	rows, err := db.Query("SELECTT * FROM users WHERE Username = $1 \n", u.Username)
+	rows, err := db.Query("SELECT * FROM users WHERE Username = $1 \n", u.Username)
 	if err != nil {
 		log.Println(err)
 		return false
